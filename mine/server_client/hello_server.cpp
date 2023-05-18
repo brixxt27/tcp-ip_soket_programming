@@ -56,7 +56,7 @@ int	main(int argc, char* argv[])
 	if (clnt_sock == -1)
 		error_handling("accept() error");
 	
-	write(clnt_sock, message, strlen(message));
+	write(clnt_sock, message, strlen(message) + 1);
 	close(clnt_sock);
 	close(serv_sock);
 	return (0);
